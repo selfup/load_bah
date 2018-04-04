@@ -9,14 +9,11 @@ const vm = new Vue({
   el: "#app",
   data() {
     return {
-      loadBars: {
-        test: {
-          id: 'test',
-          current: 90,
-          total: 1000,
-        },
-      },
+      loadBars: {},
     };
+  },
+  created() {
+    socket.send('loaded');
   },
   methods: {
     widthPercentage(percentage) {

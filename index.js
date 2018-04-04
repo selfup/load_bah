@@ -4,9 +4,7 @@ const express = require('express');
 const socketIo = require('socket.io');
 const bodyParser = require("body-parser");
 
-const dockerSpecificProcessEvents = require('./index-docker-process');
-
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 const app = express();
 
 app.locals.loadBars = {};
@@ -26,13 +24,25 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
+app.get('/healthcheck', (req, res) => {
+  res.json({});
+});
+
 app.get('/remove/:id', (req, res) => {
   delete app.locals.loadBars[req.params.id];
 
-  io.emit("updateLoadBars", app.locals.loadBars);
+  io.emit('updateLoadBars', app.locals.loadBars);
 
   res.json(app.locals.loadBars);
 });
+
+app.get('/wipe', (req, res) => {
+  app.locals.loadBars = {};
+
+  io.emit('updateLoadBars', app.locals.loadBars);
+
+  res.json(app.locals.loadBars);
+})
 
 app.get('/:id/:current/:total', (req, res) => {
   const {
@@ -55,10 +65,11 @@ app.get('/:id/:current/:total', (req, res) => {
 io.sockets.on('connection', (socket) => {
   socket.on('message', (channel, message) => {
     switch (channel) {
+      case 'loaded':
+        io.emit('updateLoadBars', app.locals.loadBars);
+        break;
       default:
         return null;
     }
   });
 });
-
-dockerSpecificProcessEvents(server);
