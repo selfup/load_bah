@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+  node:
+    build:
+      context: .
+      args:
+        - NODE_ENV=development
+
+    # use --legacy-watch on Windows only
+    # command: ../node_modules/.bin/nodemon --legacy-watch --inspect=0.0.0.0:4343
+    
+    # use FS events on *nix
+    command: ../node_modules/.bin/nodemon --inspect=0.0.0.0:4343
+
+    ports:
+      - "8080:8080"
+      - "4242:4242"
+      - "4343:4343"
+    volumes:
+      - .:/opt/app
+    environment:
+      - NODE_ENV=development

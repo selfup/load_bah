@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link rel='stylesheet' href='/w3.css'>
+    <script defer src="vue.js"></script>
+    <script src="http://localhost:8080/socket.io/socket.io.js"></script>
+    <script defer src="index.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <h1>Load Bahs!</h1>
+      <hr>
+      <div v-for="bar in loadBarArray">
+        <h2>{{ bar.id }}</h2>
+        <div class="w3-light-grey w3-xxlarge">
+          <div class="w3-container w3-green" :style="widthPercentage(bar.percentage)">{{bar.percentage}}%</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
