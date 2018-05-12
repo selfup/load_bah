@@ -26,6 +26,12 @@ curl -s localhost:8080/script_name/current_progress/total_progress
 
 _You can use `-v` if you want verbose output, but typically you want very little output via `-s`_
 
+**NOW**
+
+You view the output via: `$HOST_NAME:$PORT/`
+
+_the source code is quite small, I am sure you can figure out the rest :smile:_
+
 ### Private (LAN) network
 
 Discover the machine IP:
