@@ -30,7 +30,7 @@ _You can use `-v` if you want verbose output, but typically you want very little
 
 You view the output via: `$HOST_NAME:$PORT/`
 
-_the source code is quite small, I am sure you can figure out the rest :smile:_
+_the source code is quite small, I am sure you can figure out the rest_ :smile:
 
 ### Private (LAN) network
 
