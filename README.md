@@ -26,6 +26,22 @@ curl -s localhost:8080/script_name/current_progress/total_progress
 
 _You can use `-v` if you want verbose output, but typically you want very little output via `-s`_
 
+### Private (LAN) network
+
+Discover the machine IP:
+
+`ifconfig | grep '10.'`
+
+or
+
+`ifconfig | grep '192.'
+
+or
+
+`ifconfig | grep '172.'
+
+Should be `eth0` on ethernet or otherwise on `WLAN`
+
 ***
 
 That's it! :tada:
