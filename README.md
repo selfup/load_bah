@@ -5,7 +5,9 @@ A place for your team to make get requests (easy in curl) to update load bars!
 **GET**
 
 ```bash
-"$HOST_NAME:$PORT/script_name/current_progress/total_progress"
+curl -s "$HOST_NAME:$PORT/script_name/current_progress/total_progress"
 ```
+
+_You can use `-v` if you want verbose output, but typically you want very little output via -s`
 
 That's it! :tada:
