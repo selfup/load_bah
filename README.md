@@ -1,5 +1,7 @@
 # Load Bah
 
+A place for your team to make get requests (easy in curl) to update load bars!
+
 ### Starting the application
 
 `npm start`
@@ -7,8 +9,6 @@
 You can set the port: `$PORT=8888 npm start`
 
 Or it just defaults to `8080`
-
-A place for your team to make get requests (easy in curl) to update load bars!
 
 **GET**
 
