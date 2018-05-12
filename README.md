@@ -15,7 +15,7 @@ Or it just defaults to `8080`
 With ENV vars:
 
 ```bash
-curl -s "$HOST_NAME:$PORT/script_name/current_progress/total_progress"
+curl -s "$HOST_IP:$PORT/script_name/current_progress/total_progress"
 ```
 
 Without env vars:
@@ -28,7 +28,7 @@ _You can use `-v` if you want verbose output, but typically you want very little
 
 **NOW**
 
-You view the output via: `$HOST_NAME:$PORT/`
+You view the output via: `$HOST_IP:$PORT/`
 
 _the source code is quite small, I am sure you can figure out the rest_ :smile:
 
