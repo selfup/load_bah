@@ -34,11 +34,11 @@ Discover the machine IP:
 
 or
 
-`ifconfig | grep '192.'
+`ifconfig | grep '192.'`
 
 or
 
-`ifconfig | grep '172.'
+`ifconfig | grep '172.'`
 
 Should be `eth0` on ethernet or otherwise on `WLAN`
 
